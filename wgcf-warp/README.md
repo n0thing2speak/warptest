@@ -21,7 +21,7 @@ wget -N https://raw.githubusercontents.com/Misaka-blog/Misaka-WARP-Script/master
 ### 原生 IPv6 VPS + IPv4 WARP
 
 ```shell
-wget -N https://raw.githubusercontents.com/Misaka-blog/Misaka-WARP-Script/master/wgcf-warp/warp64.sh && bash warp64.sh
+wget -N https://raw.githubusercontents.com/n0thing2speak/warptest/master/wgcf-warp/warp64.sh && bash warp64.sh
 ```
 
 ### 原生 IPv6 VPS + 双栈 WARP

@@ -137,18 +137,6 @@ register_wgcf(){
 }
 
 generate_wgcf_config(){
-    yellow "使用WARP免费版账户请按回车跳过 \n启用WARP+账户，请复制WARP+的许可证密钥(26个字符)后回车"
-    read -p "按键许可证密钥(26个字符):" WPPlusKey
-    if [[ -n $WPPlusKey ]]; then
-        sed -i "s/license_key.*/license_key = \"$WPPlusKey\"/g" wgcf-account.toml
-        read -p "请输入自定义设备名，如未输入则使用默认随机设备名：" WPPlusName
-        green "注册WARP+账户中，如下方显示：400 Bad Request，则使用WARP免费版账户" 
-        if [[ -n $WPPlusName ]]; then
-            wgcf update --name $(echo $WPPlusName | sed s/[[:space:]]/_/g)
-        else
-            wgcf update
-        fi
-    fi
     wgcf generate
     chmod +x wgcf-profile.conf
     sed -i '/\:\:\/0/d' wgcf-profile.conf
